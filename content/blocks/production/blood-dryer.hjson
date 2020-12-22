@@ -1,0 +1,20 @@
+type:GenericCrafter
+outputItem:dried-blood/3
+size:3
+hasPower:true
+hasItems:true
+hasLiquids: true
+liquidCapacity: 10
+craftTime: 40
+updateEffect:none
+itemCapacity:10
+consumes:{
+power:0.5
+liquid:Blood/0.0670
+}
+requirements:[
+copper/30
+titanium/30
+lead/30
+]
+category:crafting
