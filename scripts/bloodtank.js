@@ -1,18 +1,29 @@
 const BloodTank = extendContent(LiquidRouter, "bloodtank", {});
 
-BloodTank.buildType = ()=>extend(Building,{
+BloodTank.buildType = prov(()=>extend(Building,{
   buildConfiguration(table) {
+       table.button("[red]"+Vars.player.unit().health+"/"+Vars.player.unit().type.health+"health", run(() => {})).size(200,50);
+       table.row();
        table.button("[red]"+this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))+"/"+BloodTank.liquidCapacity+"m", run(() => {})).size(200,50);
        table.row();
-       table.button("[blue][E] [white]Положить", run(() => {
-        if(Vars.player.unit().health>15&&BloodTank.liquidCapacity!=this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))){
+       table.button("[white]Пожертвовать", run(() => {
+        if(Vars.player.unit().health>15&&BloodTank.liquidCapacity>this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))){
           Vars.player.unit().health=Vars.player.unit().health-15;
           this.liquids.add(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"),30)
           Vars.control.input.frag.config.hideConfig();
          }
         })).size(200,50);
         table.row();
-       table.button("[red][F] [white]Взять", run(() => {
+       table.button("[white]Восполнить", run(() => {
+         if(34<this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))){
+          if(BloodTank.liquidCapacity>this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))){
+           if(Vars.player.unit().health<Vars.player.unit().type.health){
+             Vars.player.unit().health=Vars.player.unit().health+15;
+             this.liquids.remove(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"),35)
+             Vars.control.input.frag.config.hideConfig();
+           }
+          }
+         }
           //Действие
         })).size(200,50);
   },
@@ -30,6 +41,6 @@ BloodTank.buildType = ()=>extend(Building,{
   icons(){
     return [Core.atlas.find(this.name+"-bottom"),Core.atlas.find(this.name+"-top")];
   }
-});
+}));
 BloodTank.update = true;
 BloodTank.configurable = true;
