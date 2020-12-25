@@ -1,10 +1,13 @@
 const BloodTank = extendContent(LiquidRouter, "bloodtank", {});
 
 BloodTank.buildType = prov(()=>extend(Building,{
+  updateTile(){
+  	this.dumpLiquid(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"));
+  },
   buildConfiguration(table) {
-       table.button("[red]"+Vars.player.unit().health+"/"+Vars.player.unit().type.health+"health", run(() => {})).size(200,50);
+       table.button("[red]"+Mathf.round(Vars.player.unit().health)+"/"+Vars.player.unit().type.health+"health", run(() => {})).size(200,50);
        table.row();
-       table.button("[red]"+this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))+"/"+BloodTank.liquidCapacity+"m", run(() => {})).size(200,50);
+       table.button("[red]"+Mathf.round(this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood")))+"/"+BloodTank.liquidCapacity+"m", run(() => {})).size(200,50);
        table.row();
        table.button("[white]Пожертвовать", run(() => {
         if(Vars.player.unit().health>15&&BloodTank.liquidCapacity>this.liquids.get(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"))){
