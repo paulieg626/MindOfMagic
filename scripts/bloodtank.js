@@ -2,6 +2,7 @@ const BloodTank = extendContent(LiquidRouter, "bloodtank", {});
 
 BloodTank.buildType = prov(()=>extend(Building,{
   updateTile(){
+    //Fx.effect.at(this.x, this.y);
   	this.dumpLiquid(Vars.content.getByName(ContentType.liquid,"mindofmagic-Blood"));
   },
   buildConfiguration(table) {
