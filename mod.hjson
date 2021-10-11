@@ -1,0 +1,7 @@
+name: mindofmagic
+displayName: MindOfMagic
+description: Pre-alpha version of mod
+version: 0.4 alpha
+author: TheSkyFather, paulieg626 and Runksergey
+minGameVersion: 122
+dependencies:[] 

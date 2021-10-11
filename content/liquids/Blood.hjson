@@ -1,0 +1,6 @@
+temperature:0.5
+flammability: 0
+heatCapacity:0.4
+viscosity:0.5
+explosiveness:0
+color:"#bb2222"
