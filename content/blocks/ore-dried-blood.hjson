@@ -1,7 +1,0 @@
-type:OreBlock
-name:"Кровавый песок"
-itemDrop:dried-blood
-oreDefault:true
-variable: 3
-oreScale: 30
-oreThreshold: 0.9
