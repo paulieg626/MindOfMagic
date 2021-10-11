@@ -1,0 +1,31 @@
+type: PowerTurret
+name: "Laser Blood Gun"
+description: "-"
+health: 300
+size: 1
+recoilAmount: 1
+reloadTime: 1
+chargeTime: 10
+range: 200
+chargeMaxDelay: 30
+shootType:{
+  type: LaserBulletType
+  damage: 9
+  hitEffect: hitLancer
+  despawnEffect: none
+  hitSize: 5
+  lifetime: 8
+  drawSize: 300
+  collidesAir: true
+}
+targetAir: true
+powerUse: 2
+inaccuracy: 0.0
+rotateSpeed: 10.0
+chargeEffects: 50.0
+requirements: [
+  copper/30
+  blood-brick/60
+  graphite/40
+]
+category: turret

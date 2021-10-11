@@ -1,0 +1,15 @@
+type: MendProjector
+size: 2
+health: 1840
+hasPower: false
+range: 2
+reload: 80
+healPercent: 2.5
+MendEffect: none
+phaseBoost: 0
+phaseRangeBoost: 0
+MendColor: 74cf84
+category: defense
+requirements: [
+  blood-brick/96
+]

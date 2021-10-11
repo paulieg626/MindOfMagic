@@ -1,4 +1,4 @@
-type:GenericCrafter
+type: GenericCrafter
 outputItem:dried-blood/2
 size:3
 hasPower:true
@@ -6,7 +6,7 @@ hasItems:true
 hasLiquids: true
 liquidCapacity: 10
 craftTime: 40
-updateEffect:none
+drawer: DrawGlow
 itemCapacity:10
 consumes:{
 power:0.5
@@ -18,3 +18,4 @@ titanium/30
 lead/30
 ]
 category:crafting
+research:router

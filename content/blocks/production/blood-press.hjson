@@ -1,0 +1,23 @@
+type: GenericCrafter
+outputItem:blood-brick/1
+size:3
+hasPower:true
+hasItems:true
+craftTime:60
+itemCapacity:20
+drawer: DrawGlow
+ambientSound: respawning
+ambientSoundVolume: 0.5
+consumes:{
+power:1
+items:{items:[
+coal/1
+dried-blood/6
+]}}
+requirements:[
+copper/50
+dried-blood/30
+lead/20
+]
+category:crafting
+research:router
